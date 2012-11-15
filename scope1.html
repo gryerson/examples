@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Scope 1</title>
+   <script>
+      var a = 10;						// declaring and setting a value
+      display_a();						// calling a function
+      
+      function display_a () {			// declaring a name function
+    	  a = 20;						// declaring and setting a value giving it global scope
+    	  alert("Value of 'a' inside the function " + a);
+      }
+      
+      alert("Value of 'a' outside the function " + a);
+   </script>
+</head>
+<body>
+
+</body>
+</html>
