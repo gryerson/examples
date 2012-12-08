@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Node 6</title>
+   <script>
+      /* Create new child element */
+      function changeNode()
+      {
+    	  var dancing = document.getElementById('bottom');	// source
+    	  dancing.innerHTML = '<p>Dancing Home</p>';
+      }
+   </script>
+</head>
+<body>
+   <span id="top"><img src="images/evilHomer_L.gif"><img src="images/evilHomer_L.gif"><img src="images/evilHomer_L.gif" id="last"></span>
+   <br />
+   <span id="bottom"><img src="images/evilHomer_R.gif"></span>
+   <br />
+   <button onclick="changeNode();">Execute</button>
+</body>
+</html>
