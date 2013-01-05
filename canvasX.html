@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Canvas</title>
+<style>
+   canvas {
+      border: 1px solid black;
+   }
+</style>
+<script>
+   function init() {
+	  // get context
+	  var ctx = document.getElementById('canvas').getContext('2d');
+	  
+	  // draw filled rectangle
+	  ctx.beginPath();
+	  ctx.rect(10,20,250,175);
+	  ctx.closePath();
+	  ctx.fillStyle = "rgb(255,0,0)";
+	  ctx.fill();
+	  
+   }
+</script>
+</head>
+<body>
+<canvas id="canvas" width="600" height="450"></canvas>
+<br />
+<button type='button' onclick='init();'>Draw</button>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Canvas</title>
+<style>
+   canvas {
+      border: 1px solid black;
+   }
+</style>
+<script>
+   function init() {
+	  // get context
+	  var ctx = document.getElementById('canvas').getContext('2d');
+	  
+	  // draw filled rectangle
+	  /*ctx.beginPath();
+	  ctx.rect(10,20,250,175);
+	  ctx.closePath();
+	  ctx.fillStyle = "rgb(255,0,0)";
+	  ctx.fill();*/
+	  
+	  //gradient filled rectangle
+	  var linGrad = ctx.createLinearGradient(20,20,75,125);
+	  linGrad.addColorStop(0.25,'rgb(16,0,0)');
+	  linGrad.addColorStop(0.50,'rgb(128,0,0)');
+	  linGrad.addColorStop(1.00,'rgb(255,0,0)');
+	  ctx.beginPath();
+	  ctx.rect(20,20,250,175);
+	  ctx.closePath();
+	  ctx.fillStyle = linGrad;
+	  ctx.fill();
+	  
+	  /*draw filled circle */
+	  ctx.beginPath();
+	  ctx.arc(450,150,100,0,Math.PI*2,true);
+	  ctx.closePath();
+	  ctx.fillStyle = "rgb(0,225,0)";
+	  ctx.fill();
+	  
+	  /* draw triangle */
+	  ctx.beginPath();
+	  ctx.moveTo(200,200);
+	  ctx.lineTo(300,400);
+	  ctx.lineTo(100,400);
+	  ctx.fillStyle = "rgb(0,0,255)";
+	  ctx.fill();
+   }
+</script>
+</head>
+<body>
+<canvas id="canvas" width="600" height="450"></canvas>
+<br />
+<button type='button' onclick='init();'>Draw</button>
+</body>
+</html>
