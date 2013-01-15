@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Web Notification</title>
+<script>
+//Permission check
+function requestPermission(callback) {
+     webkitNotifications.requestPermission(callback);
+    	
+}
+    
+//Display notification
+function notification() { 
+		
+        
+var popUp =  
+   webkitNotifications.createNotification('twinkies.jpg',
+   'My Favorite Food','Tingling taste buds for more 
+    than 80 years');
+        
+
+if ( webkitNotifications.checkPermission() > 0 ) {
+          
+   requestPermission(notification);
+}	
+       
+popUp.show();
+)// end notification
+</script>
+</head>
+<body>
+<h2>Web Notification</h2>
+<button type="button" onclick="notification();">
+     Notify Me</button>
+
+</body>
+</html>

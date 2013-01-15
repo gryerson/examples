@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Session Storage</title>
+<script>
+function clickCounter() {
+  	
+
+// Create storage object
+       	
+var clicks = window.sessionStorage; 
+  	      
+	
+
+// check if storage exists using hasOwnProperty method
+      if ( sessionStorage.hasOwnProperty('visits') ) {        	
+
+// get key/value and convert sting to integer
+        	
+clicks = parseInt( sessionStorage.getItem('visits') );
+ 	
+
+// increment counter
+        	
+clicks++;
+  
+      	
+
+} else {
+        
+	// default 
+	
+	clicks = 1;
+	      	
+	} 
+	      
+		
+
+	// set key/new value
+		
+	sessionStorage.setItem('visits',clicks);
+	  
+	      	
+
+	// display the number of clicks
+		
+	document.getElementById("result").innerHTML="You have clicked the button " + clicks + " time(s).";  
+	}
+</script>
+
+</head>
+<body>
+<button type=”button” onclick="clickCounter();">Click me!</button>
+<output id="result"></output>
+
+</body>
+</html>

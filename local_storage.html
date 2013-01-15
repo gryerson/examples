@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Local Storage</title>
+<script>
+function clickCounter() {
+  	
+
+// Create storage object
+       	
+var clicks = window.localStorage; 
+  	      
+	
+
+// check if storage exists using in operator
+	
+if ('visits' in localStorage) {
+  
+        	
+
+// get key/value and convert sting to integer
+        	
+clicks = parseInt( localStorage.getItem('visits') );
+  	
+
+// increment counter
+        	
+clicks++;
+  
+      	
+
+} else {
+        
+	// default 
+	
+	clicks = 1;
+	      	
+	} 
+	      
+		
+
+	// set key/new value
+		
+	localStorage.setItem('visits',clicks);
+	  
+	      	
+
+	// display the number of clicks
+		
+	document.getElementById("result").innerHTML="You have clicked the button " + clicks + " time(s).";  
+	}
+	</script>
+
+</head>
+<body>
+<button type=”button” onclick="clickCounter();">Click me!</button>
+<output id="result"></output>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Drag & Drop</title>
+<style>
+#dropzone1, #dropzone2  {
+float: left;
+padding-left: 15px;
+height: 250px;
+width: 250px;
+border: dashed red 3px;
+color: green;
+font-weight:bold;
+}	
+</style>
+<script>
+//This starts the event
+function dragStart(event) {
+	event.dataTransfer.effectAllowed="move";
+	event.dataTransfer.setData("text",event.target.getAttribute("id"));
+	return true;
+}
+
+//Prevents default 
+function dragEnter(event) {
+	event.preventDefault();
+	return true;
+}
+//Turns off the dragover default. 
+function dragOver(event) {
+	return false;
+}
+
+//This is when the object is dropped
+function dragDrop(event) {
+	var dragElement = event.dataTransfer.getData("text");
+	event.target.appendChild(document.getElementById(dragElement));
+	event.preventDefault();
+}
+</script>
+
+</head>
+<body>
+<p>Place the Ring Dings into one of the lunch boxes below.</p>
+<div id="box1">
+<img src=images/ring_dings.jpg" id="snacks" width=”220” height=”159” draggable=”true”  
+ondragstart="return dragStart(event);" 
+ondragend="return dragEnd(event);" />
+</div>
+<br />
+<div id="dropzone1" ondragenter="return dragEnter(event)" 
+    ondragover="return dragOver(event);" 
+    ondrop="return dragDrop(event);">
+<p>My Lunch Box</p>
+</div>
+<div id="dropzone2" ondragenter="return dragEnter(event)" 
+    ondragover="return dragOver(event);" 
+    ondrop="return dragDrop(event);">
+<p>Their Lunch Box</p>
+</div>
+
+</body>
+</html>
